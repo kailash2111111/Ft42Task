@@ -7,8 +7,12 @@ using namespace std;
 void UserInput::user() {
     powerClass pl;
 
-    int prime = 11;
-    int generator = 7;
+    int prime ;
+    std::cout << "Enter the prime Number \n";
+    std::cin >> prime;
+    int generator;
+    std::cout << "Enter the generator \n";
+    std::cin >>generator;
 
     int OwnerPrivateNumber;
     cout << "Enter the private Key First Number : \n";
