@@ -10,13 +10,21 @@ void user::userInputr() {
    
     machine ml;
 
-    int p = 3, q = 11;
-    int n = p * q;                  // n = 33
-    int phi = (p - 1) * (q - 1);   // phi = 20
+    int p = 7919, q = 1009;
+    int n = p * q;                  
+    int phi = (p - 1) * (q - 1);   
 
-    int e = 24;
+    /*int e = 24;
     while (ml.gcdN(e, phi) != 1)
-        e++;
+    e++;*/
+
+    int e;
+    for ( e = 2; e < phi; e++) {
+
+        if (ml.gcdN(e, phi) == 1) {
+            break;
+        }
+    }
 
     int d = ml.modInverse(e, phi);
 
@@ -27,9 +35,9 @@ void user::userInputr() {
     std::cout << "Enter a message : ";
     std::cin >> msg;
 
-    int cipher = ml.Power(msg, e, n);
+    int cipher = ml.power(msg, e, n);
    std:: cout << "Encrypted Message: " << cipher << std::endl;
 
-    int decrypted = ml.Power(cipher, d, n);
+    int decrypted = ml.power(cipher, d, n);
    std:: cout << "Decrypted Message: " << decrypted << std::endl;
 }

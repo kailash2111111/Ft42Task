@@ -31,7 +31,6 @@ int  machine::power(int base, int exp, int mod) {
             result = (result *1LL * base) % mod;
 
         base = (base *1LL* base) % mod;
-      //  std::cout << "expo : " << exp << std::endl;
         exp = exp /2 ;  
 
 
